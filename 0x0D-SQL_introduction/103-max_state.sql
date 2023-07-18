@@ -1,3 +1,5 @@
--- Removes all records with a score <= 5 in the table second_table in my MySQL server.
-DELETE FROM `second_table`
-WHERE `score` <= 5;
+-- Displays the max temperature of each state, ordered by state name.
+SELECT `state`, MAX(`value`) AS `max_temp`
+FROM `temperatures`
+GROUP BY `state`
+ORDER BY `state`;
