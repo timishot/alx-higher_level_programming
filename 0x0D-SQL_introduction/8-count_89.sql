@@ -1,2 +1,2 @@
 -- number of Records with id=89
-SELECT COUNT(`ID`) FROM `first_table`
+SELECT COUNT(`id`) FROM `first_table`
