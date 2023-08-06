@@ -8,7 +8,7 @@ class Rectangle:
         number_of_instances (int): The number of Rectangle instances.
     """
 
-    number_of_instances = 0
+    number_of_instances = 0 //class attribute
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
