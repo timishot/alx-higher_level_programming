@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { argv } = require('process');
+const { argv } = require('process');//import
 
 if (argv.length <= 2) {
   console.log('No argument');
