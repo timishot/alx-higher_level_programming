@@ -3,19 +3,21 @@
 import MySQLdb
 import sys
 
-try:
-    # connect to the MySQL database
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-    cur.close()
-    db.close()
-except  MySQLdb.Error as e:
+if __name__ == "__main__":
     try:
-        # Print the MySQL error details
-        print("MySQL Error [%d]: %s" % (e.args[0], e.args[1]))
-    except IndexError:
-        print("MySQL Error: %s" % str(e))
+        # connect to the MySQL database
+        db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
+        cur = db.cursor()
+        cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+        rows = cur.fetchall()
+        for row in rows:
+            print(row)
+        cur.close()
+        db.close()
+    except  MySQLdb.Error as e:
+        try:
+            # Print the MySQL error details
+            print("MySQL Error [%d]: %s" % (e.args[0], e.args[1]))
+        except IndexError:
+            print("MySQL Error: %s" % str(e))
+
