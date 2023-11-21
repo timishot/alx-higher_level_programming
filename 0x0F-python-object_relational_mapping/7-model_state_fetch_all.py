@@ -8,7 +8,11 @@ from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
     try:
-        engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+        us = sys.argv[1]
+        pwd = sys.argv[2]
+        db = sys.argv[3]
+        engine = \
+            create_engine(f"mysql+mysqldb://{us}:{pwd}@localhost/{db}")
         Base.metadata.create_all(engine)
         Session = sessionmaker()
         local_session = Session(bind=engine)
