@@ -21,5 +21,7 @@ if __name__ == "__main__":
             print("{}: {}".format(users.id, users.name))
         else:
             print("Nothing\n")
+
+        local_session.close()
     except Exception as e:
         print(f"Error: {e}")
