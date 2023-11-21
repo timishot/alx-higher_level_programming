@@ -16,8 +16,10 @@ if __name__ == "__main__":
         Base.metadata.create_all(engine)
         Session = sessionmaker()
         local_session = Session(bind=engine)
-        users = local_session.query(State).all()[:1]
-        for index, value in enumerate(users, start=1):
-            print(f"{index}: {value.name}")
+        users = local_session.query(State).first()
+        if users:
+            print("{}: {}".format(users.id, users.name))
+        else:
+            print("Nothing\n")
     except Exception as e:
         print(f"Error: {e}")
