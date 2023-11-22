@@ -18,9 +18,11 @@ if __name__ == "__main__":
         Base.metadata.create_all(engine)
         Session = sessionmaker()
         local_session = Session(bind=engine)
-        Califonia = State(name='California',
-                          cities=[(City(name='San Francisco'))])
-        local_session.add(Califonia)
+        states = local_session.query(State).all()
+        for state in states:
+            print(f"{state.id}: {state.name}")
+            for city in state.cities:
+                print(f"     {city.id}: {city.name}")
         local_session.commit()
     except Exception as e:
         print(f"Error: {e}")
