@@ -10,7 +10,6 @@ if __name__ == "__main__":
         print("Usage: {} <URL>".format(sys.argv[0]))
         sys.exit(1)
     url = sys.argv[1]
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
+    with urllib.request.urlopen(url) as response:
         x_id = response.getheader('X-Request-Id', 'Not Present')
         print(x_id)
