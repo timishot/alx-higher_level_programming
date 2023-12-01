@@ -7,7 +7,6 @@ import urllib.parse
 if __name__ == '__main__':
     url = sys.argv[1]
     email = sys.argv[2]
-
     data = urllib.parse.urlencode({'email': email}).encode('ascii')
 
     try:
@@ -19,4 +18,3 @@ if __name__ == '__main__':
     except urllib.error.URLError as e:
         print(f"Error accessing the URL: {e}")
         sys.exit(1)
-
