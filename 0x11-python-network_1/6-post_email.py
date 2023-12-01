@@ -8,6 +8,6 @@ if __name__ == "__main__":
 		exit(1)
 	url = sys.argv[1]
 	email = sys.argv[2]
-	emails = {'email': email}
-	r = requests.post(url, email=emails)
+	payload = {'email': email}
+	r = requests.post(url, data=payload)
 	print(r.text)
