@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """X-Request-Id in the response header"""
+
 import requests
 import sys
 
