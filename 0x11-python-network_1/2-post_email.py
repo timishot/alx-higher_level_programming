@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""sends a POST request to the passed URL """
 import urllib.request
 import sys
 import urllib.parse
-"""sends a POST request to the passed URL """
 if __name__ == "__main__":
     url = sys.argv[1]
     data = {'email': sys.argv[2]}
