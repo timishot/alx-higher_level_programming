@@ -14,5 +14,5 @@ if __name__ == "__main__":
     r = requests.get(url)
     if r.status_code == 200:
         user_data = r.json()
-        for user in user_data:
+        for i, user in enumerate(user_data[:10]):
             print(f"{user['sha']}: {user['commit']['author']['name']}")
