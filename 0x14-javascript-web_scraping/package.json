@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "request": "^2.88.2",
     "semistandard": "^17.0.0"
   }
 }
